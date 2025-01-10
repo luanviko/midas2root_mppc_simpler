@@ -59,12 +59,9 @@ endif # MIDASSYS
 
 OBJS:= TTreeMaker.o TDT743RawData.o
 
-all: $(OBJS)  midas2root_mppc_simpler.exe midas2root_mppc.exe
+all: $(OBJS)  midas2root_mppc_simpler.exe
 
 midas2root_mppc_simpler.exe: midas2root_mppc_simpler.cxx $(OBJS) 
-	$(CXX) -o $@ $(CXXFLAGS) $^ $(LIBS) $(ROOTGLIBS) -lm -lz -lpthread -lssl -lutil
-
-midas2root_mppc.exe: midas2root_mppc.cxx $(OBJS) 
 	$(CXX) -o $@ $(CXXFLAGS) $^ $(LIBS) $(ROOTGLIBS) -lm -lz -lpthread -lssl -lutil
 
 %.o: %.cxx
